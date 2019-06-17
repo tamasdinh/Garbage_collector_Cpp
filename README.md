@@ -1,10 +1,10 @@
-<h3>Overview of classes
+<h3>Overview of classes</h3>
 
 The garbage collector utilizes three classes: `Pointer`, `PtrDetails` and `Iterator`.
 Let us talk about the purposes of each of these classes before analysing their code more
 in depth.
 
-<h4>_`Pointer`_
+<h4>_`Pointer`_</h4>
 
 The class `Pointer` is the fundamental class for the implementation of a garbage collector.
 The `Pointer` class upholds a list that affiliates a reference count with every memory
@@ -30,7 +30,7 @@ collector list is then traversed through, and any element that has a reference c
 equal to zero is deallocated. Garbage collecting can be activated explicitly as well
 whenever there is a need for it.
 
-<h4>_`PtrDetails`_
+<h4>_`PtrDetails`_</h4>
 
 So, as we said `Pointer` upholds a list that contains reference counts. Every element
 inside this list is encapsulated in a `PtrDetails` type object. `PtrDetails` holds the
@@ -39,7 +39,7 @@ well. address is a pointer to the memory block. `is_arr` is a bool variable that
 if there is an allocated array. It is false if it isn't. If it is, then it is set to true
 and the variable `arr_size` then holds the length of the allocated array.
 
-<h4>_The `Iter` Class_
+<h4>_The `Iter` Class_</h4>
 
 Memory to which `Pointer` is pointing to is accessed with the `*` and `->` operators.
 The `Iterator` class allows us use pointer arithmetic. `Iterator` overloads all pointer
