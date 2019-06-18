@@ -109,7 +109,7 @@ Pointer<T,size>::Pointer(T *t) {   // Constructor for both initialized and unini
     if (p->refcount) {
         p->refcount++;
     } else {
-        refContainer.push_back(PtrDetails(t, size));
+        refContainer.push_back(PtrDetails<T>(t, size));
         std::cout << "*t Constructor - Pointer added to refContainer..." << std::endl;
     }
     addr = t;
@@ -161,7 +161,7 @@ T *Pointer<T, size>::operator=(T *t){       // Overload assignment of pointer to
         p->refcount++;
         std::cout << "op= override - Pointer found in refContainer; refcount incremented..." << std::endl;
     } else {
-        refContainer.push_back(PtrDetails(addr, size));
+        refContainer.push_back(PtrDetails<T>(addr, size));
         std::cout << "op= override - Pointer added to refContainer..." << std::endl;
     }
 
